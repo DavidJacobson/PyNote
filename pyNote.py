@@ -16,7 +16,6 @@ textboxes=[]
 lastfound=0
 
 
-
 if os.path.isfile("note0.txt")==True: #Make a new file if it already exists
 	for i in range(256):
 		if os.path.isfile("note"+str(i)+".txt")==False:
