@@ -34,6 +34,10 @@ for i in to_open:
 
 for i in window:
 	textbox=ScrolledText(i)
+	#Set coloring
+	i.configure(background="#FFFFA0")
+	textbox.configure(background="#FFFFA0")
+	
 	textbox.pack()
 	textboxes.append(textbox) #Make a list of all the textbook objects
 
@@ -53,6 +57,7 @@ def main():
 			with open("note"+str(ii)+".txt","w") as textfile: #When the file is opened
 				textfile.write(textbox.get("1.0",END)) #Write anything that's been written
 				textfile.close() #Close the text file
+		
 		i.update()
 		
 		ii+=1
