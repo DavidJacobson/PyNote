@@ -7,17 +7,27 @@ to_open=[]# Store the files that are to be opened in an array
 to_read=""
 filename="note0.txt"
 textboxes=[]
+lastfound=0
 
-#Stupid hacky bug fix for when it's not the first file
-create=open("note0.txt","w")
-create.close()
+
 
 if os.path.isfile("note0.txt")==True: #Make a new file if it already exists
 	for i in range(256):
 		if os.path.isfile("note"+str(i)+".txt")==False:
 			filename="note"+str(i)+".txt"
+			
 		else:
 			to_open.append("note"+str(i)+".txt")
+			lastfound=i
+	
+	#Create an extra, new file
+	create=open("note"+str(lastfound+1)+".txt","w")
+	create.close()
+	to_open.append("note"+str(lastfound+1)+".txt")
+else:
+	#Stupid hacky bug fix for when it's not the first file
+	create=open("note0.txt","w")
+	create.close()
 
 for i in to_open:
 	window.append(Tk()) #Create a new window for each note
