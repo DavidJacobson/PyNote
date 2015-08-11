@@ -1,7 +1,13 @@
 #!/usr/bin/env python3
+#Distributed under the MIT licence
+
+#Init
+#Imports
 from tkinter import *
 from tkinter.scrolledtext import ScrolledText
 import os.path
+
+#Variable declarations 
 window=[]
 to_open=[]# Store the files that are to be opened in an array
 to_read=""
